@@ -33,7 +33,7 @@ const draggableOptions = {
 
 const resizableOptions = {
     // resize from all edges and corners
-    edges: { left: true, right: true},
+    edges: { left: true, right: true },
 
     // keep the edges inside the parent
     restrictEdges: {
@@ -50,7 +50,6 @@ const resizableOptions = {
 }
 
 const resizemove = (event) => {
-    console.log('test',target)
     var target = event.target,
         x = (parseFloat(target.getAttribute('data-x')) || 0),
         y = (parseFloat(target.getAttribute('data-y')) || 0);
