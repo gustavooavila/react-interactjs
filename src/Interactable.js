@@ -5,12 +5,7 @@ import interact from 'interact.js'
 
 export default class Interactable extends Component {
 
-	static defaultProps = {
-		draggable: null,
-		resizable: null,
-		dropzone: null,
-		gesturable: null,
-	}
+
 
 	render() {
 		return cloneElement(this.props.children, {
