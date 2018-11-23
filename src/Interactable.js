@@ -54,7 +54,7 @@ Interactable.propTypes = {
 	dropzoneOptions: React.PropTypes.object,
 	gesturable: React.PropTypes.bool,
 	gesturableOptions: React.PropTypes.object,
-	tap: PropTypes.func,
-	doubletap: PropTypes.func,
-	hold: PropTypes.func
+	tap: React.PropTypes.func,
+	doubletap: React.PropTypes.func,
+	hold: React.PropTypes.func
 }
