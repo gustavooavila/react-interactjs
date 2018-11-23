@@ -32,7 +32,7 @@ export default class Interactable extends Component {
 		if (this.props.tap) this.interact.on('tap', this.props.tap)
 		if (this.props.hold) this.interact.on('hold', this.props.hold)
 		if (this.props.doubleTap) this.interact.on('doubletap', this.props.doubleTap)
-		if (this.props.resizemove) this.interact.on('resizemove', this.props.resizeMove)
+		if (this.props.resizeMove) this.interact.on('resizemove', this.props.resizeMove)
 	}
 }
 
