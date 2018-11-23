@@ -6,20 +6,15 @@ import interact from 'interact.js'
 export default class Interactable extends Component {
 
 	static defaultProps = {
-		draggable: false,
-		resizable: false,
-		dropzone: false,
-		gesturable: false,
-		draggableOptions: {},
-		resizableOptions: {},
-		dropzoneOptions: {},
-		gesturableOptions: {},
+		draggable: null,
+		resizable: null,
+		dropzone: null,
+		gesturable: null,
 	}
 
 	render() {
 		return cloneElement(this.props.children, {
-			ref: node => this.node = node,
-			draggable: false
+			ref: node => this.node = node
 		})
 	}
 
@@ -34,10 +29,10 @@ export default class Interactable extends Component {
 	}
 
 	setInteractions() {
-		if (this.props.draggable) this.interact.draggable(this.props.draggableOptions)
-		if (this.props.resizable) this.interact.resizable(this.props.resizableOptions)
-		if (this.props.dropzone) this.interact.dropzone(this.props.dropzoneOptions)
-		if (this.props.gesturable) this.interact.gesturable(this.props.gesturableOptions)
+		if (this.props.draggable) this.interact.draggable(this.props.draggable)
+		if (this.props.resizable) this.interact.resizable(this.props.resizable)
+		if (this.props.dropzone) this.interact.dropzone(this.props.dropzone)
+		if (this.props.gesturable) this.interact.gesturable(this.props.gesturable)
 
 		if (this.props.tap) this.interact.on('tap', this.props.tap)
 		if (this.props.hold) this.interact.on('hold', this.props.hold)
@@ -49,15 +44,10 @@ export default class Interactable extends Component {
 Interactable.propTypes = {
 	children: React.PropTypes.node.isRequired,
 
-	draggable: React.PropTypes.bool,
-	resizable: React.PropTypes.bool,
-	dropzone: React.PropTypes.bool,
-	gesturable: React.PropTypes.bool,
-
-	draggableOptions: React.PropTypes.object,
-	resizableOptions: React.PropTypes.object,
-	dropzoneOptions: React.PropTypes.object,
-	gesturableOptions: React.PropTypes.object,
+	draggable: React.PropTypes.object,
+	resizable: React.PropTypes.object,
+	dropzone: React.PropTypes.object,
+	gesturabe: React.PropTypes.object,
 
 	tap: React.PropTypes.func,
 	hold: React.PropTypes.func,
