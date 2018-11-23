@@ -9,9 +9,11 @@ export default class Interactable extends Component {
 		draggable: false,
 		resizable: false,
 		dropzone: false,
+		gesturable: false,
 		draggableOptions: {},
 		resizableOptions: {},
-		dropzoneOptions: {}
+		dropzoneOptions: {},
+		gesturableOptions: {}
 	}
 
 	render() {
@@ -35,6 +37,7 @@ export default class Interactable extends Component {
 		if (this.props.draggable) this.interact.draggable(this.props.draggableOptions)
 		if (this.props.resizable) this.interact.resizable(this.props.resizableOptions)
 		if (this.props.dropzone) this.interact.dropzone(this.props.dropzoneOptions)
+		if (this.props.gesturable) this.interact.gesturable(this.props.gesturableOptions)
 	}
 }
 
@@ -45,5 +48,7 @@ Interactable.propTypes = {
 	resizable: React.PropTypes.bool,
 	resizableOptions: React.PropTypes.object,
 	dropzone: React.PropTypes.bool,
-	dropzoneOptions: React.PropTypes.object
+	dropzoneOptions: React.PropTypes.object,
+	gesturable: React.PropTypes.bool,
+	gesturableOptions: React.PropTypes.object
 }
