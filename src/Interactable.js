@@ -8,9 +8,9 @@ export default class Interactable extends Component {
 
 
 	render() {
-		return cloneElement(this.props.children, {
-			ref: node => this.node = node
-		})
+		return React.Children.map(this.props.children, (child) => cloneElement(child, {
+			ref: (node) => this.node = node
+		}));
 	}
 
 	componentDidMount() {
