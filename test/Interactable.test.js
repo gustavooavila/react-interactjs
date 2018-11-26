@@ -9,14 +9,14 @@ const sandbox = sinon.sandbox.create()
 
 describe('Interactable', () => {
 	let result
-	
+
 	afterEach(() => {
 		sandbox.restore()
 	})
 
 	context('without children', () => {
 		it('errors', () => {
-			expect(function() {
+			expect(function () {
 				mount(<Interactable />)
 			}).to.throw
 		})
@@ -29,7 +29,7 @@ describe('Interactable', () => {
 		})
 
 		it('does not error', () => {
-			expect(function() {
+			expect(function () {
 				mount(<Interactable><div /></Interactable>)
 			}).not.to.throw
 		})
@@ -61,7 +61,7 @@ describe('Interactable', () => {
 		describe('on componentWillReceiveProps', () => {
 			beforeEach(() => {
 				const rendered = mount(<Interactable><div /></Interactable>)
-				rendered.setProps({foo: 'bar'})
+				rendered.setProps({ foo: 'bar' })
 			})
 
 			it('calls setInteractions', () => {
@@ -69,46 +69,34 @@ describe('Interactable', () => {
 			})
 		})
 
-		context('when draggable is true', () => {
+
+		describe('when draggable options are provided', () => {
+			let options
+
 			beforeEach(() => {
-				result = mount(<Interactable draggable><div /></Interactable>)
+				options = {
+					foo: 'bar'
+				}
+				result = mount(<Interactable draggable={options}><div /></Interactable>)
 				sandbox.stub(result.node.interact, 'draggable')
-				result.setProps({draggable: true})
+				result.setProps({ draggable: options })
 			})
 
-			it('calls interact.draggable', () => {
-				expect(result.node.interact.draggable).to.have.been.called
-			})
-
-			describe('when draggableOptions are provided', () => {
-				let options
-
-				beforeEach(() => {
-					options = {
-						foo: 'bar'
-					}
-					result = mount(<Interactable draggable draggableOptions={options}><div /></Interactable>)
-					sandbox.stub(result.node.interact, 'draggable')
-					result.setProps({draggable: true})
-				})
-
-				it('calls interact.draggable with draggableOptions', () => {
-					expect(result.node.interact.draggable).to.have.been.calledWith(options)
-				})
-			})
-		})
-
-		context('when draggable is false', () => {
-			beforeEach(() => {
-				result = mount(<Interactable><div /></Interactable>)
-				sandbox.stub(result.node.interact, 'draggable')
-				result.setProps({draggable: false})
-			})
-
-			it('does not call interact.draggable', () => {
-				expect(result.node.interact.draggable).not.to.be.called
+			it('calls interact.draggable with draggable options', () => {
+				expect(result.node.interact.draggable).to.have.been.calledWith(options)
 			})
 		})
 	})
 
+	context('when draggable is false', () => {
+		beforeEach(() => {
+			result = mount(<Interactable><div /></Interactable>)
+			sandbox.stub(result.node.interact, 'draggable')
+			result.setProps({ draggable: null })
+		})
+
+		it('does not call interact.draggable', () => {
+			expect(result.node.interact.draggable).not.to.be.called
+		})
+	})
 })
