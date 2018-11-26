@@ -4,7 +4,7 @@ module.exports = {
 	entry: "./src/Interactable.js",
   output: {
     path: __dirname,
-    filename: "Interactable.js"
+    filename: "index.js"
   },
   module: {
 	  loaders: [
