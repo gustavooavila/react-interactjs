@@ -1,14 +1,6 @@
 import React from 'react'
 import Interactive from '../../src/Interactable'
 
-const css = {
-    width: '100px',
-    height: '100px',
-    background: '#ccc'
-}
-
-
-
 const draggableOptions = {
     onmove: (event) => {
         var target = event.target,
@@ -33,7 +25,7 @@ const draggableOptions = {
 
 const resizableOptions = {
     // resize from all edges and corners
-    edges: { left: true, right: true },
+    edges: { left: true, right: true, top: true, bottom: true },
 
     // keep the edges inside the parent
     restrictEdges: {
@@ -73,7 +65,9 @@ const resizemove = (event) => {
 
 const DraggableDemo = () => (
     <Interactive draggable={draggableOptions} resizable={resizableOptions} resizeMove={resizemove} >
-        <div style={{ ...css }}></div>
+        <div className="resize-drag">
+            Resize from any edge or corner
+        </div>
     </Interactive>
 )
 

@@ -20,7 +20,9 @@ const draggableOptions = {
 }
 const DraggableDemo = () => (
 	<Interactive draggable={draggableOptions}>
-		<img src="https://pbs.twimg.com/profile_images/526421493731717120/INda0NaM.png" height={100} width={100} />
+		<div id="drag-1" className="draggable">
+			<p> You can drag one element </p>
+		</div>
 	</Interactive>
 )
 

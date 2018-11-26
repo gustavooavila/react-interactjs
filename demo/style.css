@@ -1,0 +1,76 @@
+#outer-dropzone {
+  height: 140px;
+
+  touch-action: none;
+}
+
+#inner-dropzone {
+  height: 80px;
+}
+
+.dropzone {
+  background-color: #ccc;
+  border: dashed 4px transparent;
+  border-radius: 4px;
+  margin: 10px auto 30px;
+  padding: 10px;
+  width: 80%;
+  transition: background-color 0.3s;
+}
+
+.drop-active {
+  border-color: #aaa;
+}
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.drag-drop {
+  display: inline-block;
+  min-width: 40px;
+  padding: 2em 0.5em;
+
+  color: #fff;
+  background-color: #29e;
+  border: solid 2px #fff;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+
+  transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+  color: #000;
+  background-color: #4e4;
+}
+
+.resize-drag {
+  background-color: #29e;
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 30px 20px;
+  touch-action: none;
+
+  width: 120px;
+
+  /* This makes things *much* easier */
+  box-sizing: border-box;
+}
+
+#drag-1{
+  width: 150px;
+  height: 80px;
+  background-color: #29e;
+  color: white;
+  border-radius: 0.75em;
+  user-select: none;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+}
