@@ -84,10 +84,12 @@
 			value: function render() {
 				var _this2 = this;
 
-				return (0, _react.cloneElement)(this.props.children, {
-					ref: function ref(node) {
-						return _this2.node = node;
-					}
+				return _react2.default.Children.map(this.props.children, function (child) {
+					return (0, _react.cloneElement)(child, {
+						ref: function ref(node) {
+							return _this2.node = node;
+						}
+					});
 				});
 			}
 		}, {
