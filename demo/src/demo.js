@@ -3,12 +3,14 @@ import { render } from 'react-dom'
 
 import DraggableDemo from './draggable_demo';
 import DraggableResize from './resizable_demo';
+import DropzoneDemo from './dropzone_demo';
 
 const example = (
     <div>
         <h2>Draggable</h2>
         <DraggableDemo />
         <DraggableResize />
+        <DropzoneDemo />
     </div>
 )
 
